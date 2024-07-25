@@ -1,5 +1,5 @@
-import Search_bar from '@/components/search_bar';
-import Header from '@/components/header';
+import Search_bar from '../components/search_bar';
+import Header from '../components/header';
 
 const Page = () => {
   return (
