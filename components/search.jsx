@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Search = ({ type, text }) => {
   const [books, setBooks] = useState([]);
+
+  const handleDetailsClick = (book) => {
+    localStorage.setItem("book", JSON.stringify(book));
+  };
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -36,7 +41,6 @@ const Search = ({ type, text }) => {
       }
       const result = await response.json();
 
-      
       const volumes = await Promise.all(
         result.items.map(async (item) => {
           const res = await fetch(
@@ -53,6 +57,7 @@ const Search = ({ type, text }) => {
 
   return (
     <div className="flex flex-col items-start p-5 mx-auto mt-10 w-1/2 bg-dark-blue border border-black rounded-lg shadow-lg">
+      <p>{books.length} Search Results Found</p>
       {books.map((book, index) =>
         book.volumeInfo ? (
           <div
@@ -69,9 +74,13 @@ const Search = ({ type, text }) => {
               />
             )}
             <div className="ml-5 ">
-              <h2 className="text-xl font-bold text-white">
+              <Link
+                  href="/book"
+                  className="text-xl font-bold text-white"
+                  onClick={() => handleDetailsClick(book)}
+                >
                 {book.volumeInfo.title}
-              </h2>
+                </Link>
               <p className="text-gray-300">
                 {book.volumeInfo.authors?.join(", ")}
               </p>
