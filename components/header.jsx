@@ -1,15 +1,17 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <nav className="flex justify-between items-center bg-dark-blue">
-      <div className="w-full text-7xl font-serif tracking-widest">
+      <a href="/" className="w-full text-7xl font-serif tracking-widest">
         <span className="font-thin italic">Lit</span>
         <span className="font-normal">Rate</span>
-      </div>
+      </a>
       <div className="w-full flex justify-around items-center text-3xl font-extralight">
-        <div>Home</div>
+        <Link href={'/'}>Home</Link>
         <div>Browse</div>
         <div>My Books</div>
-        <div className="bg-orange-red px-5 py-1 rounded-full font-normal">Login</div>
+        <Link href={'/login'} className="bg-orange-red px-5 py-1 rounded-full font-normal">Login</Link>
       </div>
     </nav>
   );
