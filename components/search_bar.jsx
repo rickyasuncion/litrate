@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Search from "./search";
@@ -21,7 +21,10 @@ function Search_bar() {
 
   return (
     <>
-      <form onSubmit={handleSearch} className="w-3/5 h-12 text-black flex justify-center mt-20 mx-auto">
+      <form
+        onSubmit={handleSearch}
+        className="w-3/5 h-12 text-black flex justify-center mt-20 mx-auto"
+      >
         <select
           className="border border-black rounded-l-full px-3"
           title="type"

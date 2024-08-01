@@ -1,7 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AuthContextProvider } from "./_utils/auth-context";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const Layout = ({ children }) => {
+  return <AuthContextProvider>{children}</AuthContextProvider>;
+};  
 
 export const metadata = {
   title: "Create Next App",

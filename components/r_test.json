@@ -1,0 +1,42 @@
+[
+    {
+        "isbn": "1234566789",
+        "reviews": [
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            },
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            },
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            }
+        ]
+    },
+    {
+        "isbn": "1234566789",
+        "reviews": [
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            },
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            },
+            {
+                "author": "string",
+                "date": "date",
+                "content": "string"
+            }
+        ]
+    }
+]
