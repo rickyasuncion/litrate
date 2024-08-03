@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { collection, addDoc, query, getDocs } from "firebase/firestore";
 import { UserAuth } from "@/app/_utils/auth-context";
 import { useRouter } from "next/navigation";
 import { db } from "@/app/_utils/firebase";
@@ -25,10 +25,8 @@ function Reviews({ book }) {
       setReviews(items);
     };
 
-    if (user) {
-      fetchReviews();
-    }
-  }, [user, isbn]);
+    fetchReviews();
+  }, [isbn]);
 
   const addReview = async () => {
     const newReview = {
@@ -59,7 +57,7 @@ function Reviews({ book }) {
   return (
     <div className="p-6 bg-white shadow-md rounded-lg mx-10">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <h3 className="text-lg font-semibold">Reviews:</h3>
+        <h3 className="text-lg text-gray-700 font-semibold">Reviews:</h3>
 
         <label htmlFor="review" className="block">
           <textarea
@@ -83,7 +81,9 @@ function Reviews({ book }) {
             key={review.id}
             className="p-4 border border-gray-200 rounded-md"
           >
-            <h4 className="text-sm text-gray-700 font-bold">{review.data.author}</h4>
+            <h4 className="text-sm text-gray-700 font-bold">
+              {review.data.author}
+            </h4>
             <p className="mt-2 text-gray-700">{review.data.content}</p>
             <p className="mt-2 text-xs text-gray-500">{review.data.date}</p>
           </div>

@@ -22,7 +22,7 @@ function Book_details({ book }) {
 
   return (
     <div>
-    <div className="flex items-center justify-center m-5 bg-dark-blue p-9 border border-black rounded-lg shadow-lg">
+    <div className="flex items-center text-white justify-center m-5 bg-dark-blue p-9 border border-black rounded-lg shadow-lg">
       <div className="flex items-center justify-center w-full">
         <Image
           width={300}
